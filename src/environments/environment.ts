@@ -1,12 +1,11 @@
 export const environment = {
     production: false,
     firebase: {
-        apiKey: "AIzaSyDZtXNhKQccMFZCc6BWWcfuWR6g_aq-6Ac",
-        authDomain: "pokemon-matching-game.firebaseapp.com",
-        projectId: "pokemon-matching-game",
-        storageBucket: "pokemon-matching-game.appspot.com",
-        messagingSenderId: "1080178394923",
-        appId: "1:1080178394923:web:419aec4dcfc972c18de76e",
-        measurementId: "G-8TTTEZ601S"
+        apiKey: "AIzaSyA8XcqQYQQEQfw2nnB1cvaVTubBp5DzLUY",
+        authDomain: "pokemon-matching-game-2e6aa.firebaseapp.com",
+        projectId: "pokemon-matching-game-2e6aa",
+        storageBucket: "pokemon-matching-game-2e6aa.appspot.com",
+        messagingSenderId: "760397036392",
+        appId: "1:760397036392:web:8cb34ce97f29b10349b4dd"
     }
 }
