@@ -10,12 +10,16 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
+import { KitchenTableComponent } from './components/kitchen-table/kitchen-table.component';
+import { SetupComponent } from './components/setup/setup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    KitchenTableComponent,
+    SetupComponent
   ],
   imports: [
     BrowserModule,
