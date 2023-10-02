@@ -1,0 +1,21 @@
+.sign-up {
+  margin-left: 35px;
+  width: 400px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.signupButton {
+  background-color: #C56A19;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 20px 20px;
+  border-radius: 35px;
+  border: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=landing-page.component.css.map */

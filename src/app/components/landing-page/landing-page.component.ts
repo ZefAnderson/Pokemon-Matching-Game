@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
+import { SignUpComponent } from '../sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,5 +13,9 @@ export class LandingPageComponent {
  constructor(
   public authService: AuthService
  ) {}
+
+ submitNewUser() {
+
+ };
 
 }

@@ -12,6 +12,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { KitchenTableComponent } from './components/kitchen-table/kitchen-table.component';
 import { SetupComponent } from './components/setup/setup.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +22,17 @@ import { SetupComponent } from './components/setup/setup.component';
     LandingPageComponent,
     ProfileComponent,
     KitchenTableComponent,
-    SetupComponent
+    SetupComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
