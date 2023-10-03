@@ -1,10 +1,52 @@
+.centered {
+  background-color: #f0ead8;
+  opacity: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 400px;
+  height: 400px;
+  border-radius: 7px;
+}
+
+.opaque {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.displayTable {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .sign-up {
-  margin-left: 35px;
   width: 400px;
   height: 150px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -125%);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.sign-up mat-form-field {
+  margin-bottom: -15px;
 }
 
 .signupButton {
@@ -14,8 +56,31 @@
   padding: 20px 20px;
   border-radius: 35px;
   border: none;
-  margin-top: 25px;
+  margin-top: 5px;
   margin-bottom: 25px;
   display: flex;
   justify-content: center;
+}
+
+.glow-button:hover {
+  color: #C56A19;
+  background-color: #013832;
+  box-shadow: 0 5px 15px #013832;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.everything {
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
+  background-image: url(../../../assets/images/1200px-LGPE_Kanto_Map.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }/*# sourceMappingURL=landing-page.component.css.map */
