@@ -29,6 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import {MatSelectModule} from '@angular/material/select';
     ProfileComponent,
     KitchenTableComponent,
     SetupComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,9 @@ import {MatSelectModule} from '@angular/material/select';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

@@ -1,50 +1,69 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-      <div class="authBlock">
-        <h3>Sign In</h3>
-        <div class="formGroup">
-          <input
-            type="text"
-            class="formControl"
-            placeholder="Username"
-            #userName
-            required
-          />
-        </div>
-        <div class="formGroup">
-          <input
-            type="password"
-            class="formControl"
-            placeholder="Password"
-            #userPassword
-            required
-          />
-        </div>
-        <!-- Calling SignIn Api from AuthService -->
-        <div class="formGroup">
-          <input
-            type="button"
-            class="btn btnPrimary"
-            value="Log in"
-            (click)="authService.SignIn(userName.value, userPassword.value)"
-          />
-        </div>
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-        <div class="forgotPassword">
-          <span routerLink="/forgot-password">Forgot Password?</span>
-        </div>
-      </div>
-      <div class="redirectToLogin">
-        <span
-          >Don't have an account?<span
-            class="redirect"
-            routerLink="/register-user"
-          >
-            Sign Up</span
-          ></span
-        >
-      </div>
+<div class="everything">
+  <!-- <img class="testing" src="assets/images/1200px-LGPE_Kanto_Map.png" alt="kanto region map via Bulbapedia"> -->
+  <div class="opaque">
+    <div class="centered">
     </div>
-  </div>
+      <div class="displayTable">
+        <div class="displayTableCell">
+          <div class="authBlock">
+            <h3>Sign In</h3>
+            <div class="formGroup">
+              <input
+                type="text"
+                class="formControl"
+                placeholder="Username"
+                #userName
+                required
+              />
+            </div>
+            <div class="formGroup">
+              <input
+                type="password"
+                class="formControl"
+                placeholder="Password"
+                #userPassword
+                required
+              />
+            </div>
+            <!-- Calling SignIn Api from AuthService -->
+            <div class="formGroup">
+              <input
+                type="button"
+                class="btn btnPrimary"
+                value="Log in"
+                (click)="authService.SignIn(userName.value, userPassword.value)"
+              />
+            </div>
+            <div class="formGroup">
+              <span class="or"><span class="orInner">Or</span></span>
+            </div>
+            <div class="forgotPassword">
+              <span routerLink="/forgot-password">Forgot Password?</span>
+            </div>
+          </div>
+          <div class="redirectToLogin">
+            <span
+              >Don't have an account?<span
+                class="redirect"
+                routerLink="/register-user"
+              >
+                Sign Up</span
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- <div class="sign-up">
+        <label>Name</label><input placeholder="Ash Ketchum" id="Name" label="Name">
+        <label>Email</label><input placeholder="you@email.com" id="Email" label="Email">
+        <label>Password</label><input placeholder="password" id="Password" label="Password">
+        <label>Confirm Password</label><input placeholder="password" id="Confirm" label="Confirm">
+        <button class="signupButton glow-button" (click)="submitNewUser()">
+          Submit
+        </button>
+      </div> -->
+      
+    </div>
+  
+  
+</div>
