@@ -8,7 +8,7 @@ import { SetupComponent } from './components/setup/setup.component';
 const routes: Routes = [
   {path: '', component: LandingPageComponent, pathMatch: 'full'},
   {path: 'profile/:id', component: ProfileComponent},
-  {path: 'setup', component: SetupComponent},
+  {path: 'setup/:id', component: SetupComponent},
   {path: 'kitchentable', component: KitchenTableComponent},
   {path: '**', component: LandingPageComponent, pathMatch: 'full'}
 ];
