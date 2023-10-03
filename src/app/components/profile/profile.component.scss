@@ -24,18 +24,37 @@ body {
     margin: 1em;
     width: 70vw;
     height: 20vw;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.mat-mdc-card-content:first-child {
+    padding: 0px;
+}
+
 .card-image-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     width: 20vw;
     height: 20vw;
+    position: relative;
 }
+
+.edit-button {
+    position: absolute;
+    top: 2vw;
+    right: 1vw;
+    z-index: 999999;
+    height: 4vw;
+    width: 4.25vw
+}
+
 
 .card-image {
     border-radius: 50%;
-    height: 17vw;
-    width: 17vw;
+    height: 75%;
+    width: 80%;
+    align-self: center;
 }
 
 .mat-divider.mat-divider-vertical {
