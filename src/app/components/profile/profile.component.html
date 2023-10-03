@@ -1,1 +1,102 @@
-<p>profile works!</p>
+<mat-toolbar class="profile-header">
+    <p class="header-text">My Profile</p>
+</mat-toolbar>
+
+<div class="profile-card-centering">
+    <mat-card class="profile-card">
+        <mat-card-content class="card-image-container">
+            <button mat-mini-fab color="accent" class="edit-button">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <img class="card-image" src="assets/images/jessie.png" alt="placeholder profile image">
+        </mat-card-content>
+        <mat-divider [vertical]="true"></mat-divider>
+        <mat-card-content class="profile-info">
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>First Name</span>
+                    <span matListItemLine>Jessie</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Last Name</span>
+                    <span matListItemLine>Musashi</span>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-card-content class="profile-info">
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>PlayerID</span>
+                    <span matListItemLine>WSEFOnmlknlij23423</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Player Name</span>
+                    <span matListItemLine>BlastingOffAgain</span>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="set-up-game-button">
+    <button mat-raised-button color="accent" (click)="goToSetUp()">
+        Start A New Game
+    </button>
+</div>
+
+<p class="data-header">Game Data</p>
+<p class="center-divider">
+    <mat-divider></mat-divider>
+</p>
+
+<div class="data-cards-container">
+    <mat-card class="data-card">
+        <img src="assets/images/stadium.png" alt="Pokemon Stadium" class="data-card-image">
+        <mat-card-content class="data-card-text">
+            <h3>
+                Games Played: 33
+            </h3>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="data-card">
+        <img src="assets/images/victory.png" alt="Victory Image" class="data-card-image">
+        <mat-card-content class="data-card-text">
+            <h3>
+                Games Won: 6
+            </h3>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="data-card">
+        <img src="assets/images/pokecenter.png" alt="PokeCenter" class="data-card-image">
+        <mat-card-content class="data-card-text">
+            <h3>
+                Games Lost: 27
+            </h3>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="player-list-outer-container">
+    <mat-list class="player-list-container">
+        <h3 matListItemTitle>Players You Have Beaten</h3>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/misty.png">
+            <span matListItemTitle> Misty </span>
+        </mat-list-item>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/brock.png">
+            <span matListItemTitle> Brock </span>
+        </mat-list-item>
+    </mat-list>
+    <mat-list class="player-list-container">
+        <h3 matListItemTitle>Players Who Have Beaten You</h3>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/ash.png">
+            <span matListItemTitle> Ash </span>
+        </mat-list-item>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/mom.png">
+            <span matListItemTitle> Ash's Mom </span>
+        </mat-list-item>
+    </mat-list>
+</div>

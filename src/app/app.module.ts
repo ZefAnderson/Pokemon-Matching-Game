@@ -12,6 +12,15 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { KitchenTableComponent } from './components/kitchen-table/kitchen-table.component';
 import { SetupComponent } from './components/setup/setup.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+
+
 
 @NgModule({
   declarations: [
@@ -19,14 +28,21 @@ import { SetupComponent } from './components/setup/setup.component';
     LandingPageComponent,
     ProfileComponent,
     KitchenTableComponent,
-    SetupComponent
+    SetupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,137 @@
+body {
+    min-width: 900px;
+    max-width: 1150px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: center;
+}
+
+.header-text {
+    font-size: 1.5em;
+}
+
+.profile-card-centering {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em;
+    width: 70vw;
+    height: 20vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.mat-mdc-card-content:first-child {
+    padding: 0px;
+}
+
+.card-image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 20vw;
+    height: 20vw;
+    position: relative;
+}
+
+.edit-button {
+    position: absolute;
+    top: 2vw;
+    right: 1vw;
+    z-index: 999999;
+    height: 4vw;
+    width: 4.25vw
+}
+
+
+.card-image {
+    border-radius: 50%;
+    height: 75%;
+    width: 80%;
+    align-self: center;
+}
+
+.mat-divider.mat-divider-vertical {
+    align-self: center;
+    border-right-width: 0.35vw;
+    border-right-color: rgba(50, 50, 93, 0.25);
+    height: 90%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25vw;
+    height: 20vw;
+}
+
+.set-up-game-button {
+    display: flex;
+    justify-content: center;
+}
+
+.data-header {
+    text-align: center;
+    padding-top: 5vw;
+    font-size: 1.5em;
+}
+
+.center-divider {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+
+.data-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.data-card {
+    display: flex;
+    width: 23vw;
+    height: 18vw;
+    margin: 1vw;
+    padding: .5vw;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.mat-mdc-card-content:last-child {
+    padding: 0px;
+}
+
+.data-card-image {
+    display: flex;
+    height: 14vw;
+}
+
+.data-card-text {
+    align-self: center;
+    padding: 0px;
+    margin-top: .35vw;
+}
+
+.player-list-outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2vw;
+}
+
+.player-list-container {
+    padding: 1vw 5vw;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.player-list {
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
