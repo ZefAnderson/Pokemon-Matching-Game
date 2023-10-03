@@ -1,0 +1,37 @@
+.profile-header {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card-centering {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 70vw;
+}
+.card-image-container {
+    width: 20vw;
+    height: 20vw;
+}
+
+.card-image {
+    border-radius: 50%;
+    height: 15vw;
+    width: 15vw;
+}
+
+.mat-divider.mat-divider-vertical {
+    border-right-width: 5px;
+    border-right-color: lightslategrey;
+}
+
+.profile-info {
+    width: 25vw
+}

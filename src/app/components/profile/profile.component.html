@@ -1,1 +1,38 @@
-<p>profile works!</p>
+<p>
+    <mat-toolbar class="profile-header">
+        <span>My Profile</span>
+    </mat-toolbar>
+</p>
+
+<div class="profile-card-centering">
+    <mat-card class="profile-card">
+        <mat-card-content class="card-image-container">
+            <img class="card-image" src="../assets/images/jessie.png" alt="placeholder profile image">
+        </mat-card-content>
+        <mat-divider [vertical]="true"></mat-divider>
+        <mat-card-content class="profile-info">
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>First Name</span>
+                    <span matListItemLine>Jessie</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Last Name</span>
+                    <span matListItemLine>Musashi</span>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-card-content class="profile-info">
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>PlayerID</span>
+                    <span matListItemLine>WSEFOnmlknlij23423</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Player Name</span>
+                    <span matListItemLine>BlastingOffAgain</span>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
