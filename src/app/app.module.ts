@@ -15,6 +15,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { KitchenTableComponent } from './components/kitchen-table/kitchen-table.component';
 import { SetupComponent } from './components/setup/setup.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -37,6 +38,7 @@ import {MatSelectModule} from '@angular/material/select';
     ProfileComponent,
     KitchenTableComponent,
     SetupComponent,
+    SignUpComponent
 
   ],
   imports: [

@@ -1,1 +1,26 @@
-<p>sign-up works!</p>
+
+<div class="sign-up">
+  <mat-form-field>
+    <!-- <label>Name</label> -->
+    <input matInput placeholder="Ash" id="FirstName" label="firstName">
+  </mat-form-field>
+  <mat-form-field>
+    <!-- <label>Name</label> -->
+    <input matInput placeholder="Ketchum" id="LastName" label="lastName">
+  </mat-form-field>
+  <mat-form-field>
+    <!-- <label>Email</label> -->
+    <input matInput placeholder="you@email.com" id="Email" label="Email">
+  </mat-form-field>
+  <mat-form-field>
+    <!-- <label>Password</label> -->
+    <input matInput placeholder="password" id="Password" label="Password">
+  </mat-form-field>
+  <mat-form-field>
+    <!-- <label>Confirm Password</label> -->
+    <input matInput placeholder="confirm password" id="Confirm" label="Confirm">
+  </mat-form-field>
+  <button class="signupButton glow-button" (click)="submitNewUser()">
+    Submit
+  </button>
+</div>
