@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { DoughnutChartComponent } from './components/profile/doughnut-chart/doughnut-chart.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { MatListModule } from '@angular/material/list';
     LandingPageComponent,
     ProfileComponent,
     KitchenTableComponent,
-    SetupComponent
+    SetupComponent,
+    DoughnutChartComponent
   ],
   imports: [
     BrowserModule,
