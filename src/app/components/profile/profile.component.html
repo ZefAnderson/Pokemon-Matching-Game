@@ -35,6 +35,12 @@
     </mat-card>
 </div>
 
+<div class="set-up-game-button">
+    <button mat-raised-button color="accent" (click)="goToSetUp()">
+        Start A New Game
+    </button>
+</div>
+
 <p class="data-header">Game Data</p>
 <p class="center-divider">
     <mat-divider></mat-divider>
@@ -65,7 +71,29 @@
             </h3>
         </mat-card-content>
     </mat-card>
-    <mat-card class="data-card">
-        
-    </mat-card>
+</div>
+
+<div class="player-list-outer-container">
+    <mat-list class="player-list-container">
+        <h3 matListItemTitle>Players You Have Beaten</h3>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/misty.png">
+            <span matListItemTitle> Misty </span>
+        </mat-list-item>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/brock.png">
+            <span matListItemTitle> Brock </span>
+        </mat-list-item>
+    </mat-list>
+    <mat-list class="player-list-container">
+        <h3 matListItemTitle>Players Who Have Beaten You</h3>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/ash.png">
+            <span matListItemTitle> Ash </span>
+        </mat-list-item>
+        <mat-list-item class="player-list">
+            <img matListItemAvatar src="assets/images/mom.png">
+            <span matListItemTitle> Ash's Mom </span>
+        </mat-list-item>
+    </mat-list>
 </div>
