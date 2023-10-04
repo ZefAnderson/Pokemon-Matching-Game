@@ -101,6 +101,15 @@ export class SetupComponent implements OnInit {
     return (this.form.get('players') as FormArray).controls
   }
 
+
+  addAnotherPlayer () {
+    console.log('oooh!')
+  }
+
+  startTheGame () {
+    console.log('AHHHHHH!!!!!')
+  }
+
 }
 
 

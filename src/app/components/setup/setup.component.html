@@ -13,7 +13,7 @@
           </mat-select>
         </mat-form-field>
       </mat-card-content>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="addAnotherPlayer()">
         <mat-icon aria-hidden="false" aria-label="add circle icon" fontIcon="add_circle"></mat-icon> Add player
       </button>
     </mat-card>
@@ -32,7 +32,7 @@
       </mat-card-content>
     </mat-card>
   </form>
-  <button mat-raised-button color="primary" >
+  <button mat-raised-button color="primary" (click)="startTheGame()">
     <mat-icon aria-hidden="false" aria-label="add circle icon" fontIcon="play_circle"></mat-icon> Start game
   </button>
 </div>
