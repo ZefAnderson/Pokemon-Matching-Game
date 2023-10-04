@@ -5,8 +5,17 @@
   <form [formGroup]="form">
     <mat-card class="profile-card">
       <mat-card-content class="card-image-container">
-        <p>select players</p>
+        <mat-card-title>Select other players</mat-card-title>
+        <mat-form-field>
+          <mat-label>Choose a player</mat-label>
+          <mat-select>
+            <mat-option  *ngFor="let player of playerControls" value={{player.value.name}} >{{player.value.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </mat-card-content>
+      <button mat-raised-button color="primary">
+        <mat-icon aria-hidden="false" aria-label="add circle icon" fontIcon="add_circle"></mat-icon> Add player
+      </button>
     </mat-card>
 
     <mat-card class="profile-card">
@@ -23,7 +32,9 @@
       </mat-card-content>
     </mat-card>
   </form>
+  <button mat-raised-button color="primary" >
+    <mat-icon aria-hidden="false" aria-label="add circle icon" fontIcon="play_circle"></mat-icon> Start game
+  </button>
 </div>
 
 
-<button mat-raised-button color="primary" >Start game</button>

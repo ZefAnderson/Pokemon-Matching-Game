@@ -12,7 +12,17 @@ export class SetupComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {  // Use private access modifier for fb
     this.form = fb.group({
-      player: fb.array([]),
+      players: fb.array([
+        fb.group({
+          name: ['player One']
+        }),
+        fb.group({
+          name: ['player two']
+        }),
+        fb.group({
+          name: ['player three']
+        }),
+      ]),
       decks: fb.array([
         fb.group({
           type: ['water'],
@@ -85,6 +95,10 @@ export class SetupComponent implements OnInit {
 
   get deckControls(): AbstractControl[] {
     return (this.form.get('decks') as FormArray).controls;
+  }
+
+  get playerControls() :AbstractControl[] {
+    return (this.form.get('players') as FormArray).controls
   }
 
 }
