@@ -2,99 +2,28 @@
     <p class="header-text">Game Setup</p>
 </mat-toolbar>
 <div class="profile-card-centering">
-  <mat-card class="profile-card">
-    <mat-card-content class="card-image-container">
-      <p>select players</p>
-    </mat-card-content>
-  </mat-card>
+  <form [formGroup]="form">
+    <mat-card class="profile-card">
+      <mat-card-content class="card-image-container">
+        <p>select players</p>
+      </mat-card-content>
+    </mat-card>
 
-  <mat-card class="profile-card">
-    <mat-card-header>
-      <mat-card-title>Select Deck</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-radio-group class="pokeTypes">
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/normal.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/grass.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/water.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/fire.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/electric.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/ice.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/ground.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/dark.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/poison.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/fairy.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/dragon.png" alt="">
-        </div>
-        <div class="radiogroup">
-          <mat-radio-button>
-          </mat-radio-button>
-          <img src="../../../assets/images/types/bug.png" alt="">
-        </div>
-       
-        
-      </mat-radio-group>
-    </mat-card-content>
-  </mat-card>
+    <mat-card class="profile-card">
+      <mat-card-header>
+        <mat-card-title>Select Deck</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-radio-group class="pokeTypes">
+          <div class="radiogroup" *ngFor="let deck of deckControls">
+            <mat-radio-button value={{deck.value.type}}>{{deck.value.type | uppercase}}</mat-radio-button>
+            <img src={{deck.value.img}} alt="">
+          </div>
+        </mat-radio-group>
+      </mat-card-content>
+    </mat-card>
+  </form>
 </div>
 
-<!-- <mat-card>
-  <mat-card-content>
-      <form [formGroup]="form">
-        <section>
-          <mat-form-field>
-            <mat-label>Select Deck</mat-label>
-            <mat-select formControlName="decks" disableRipple>
-                <mat-option *ngFor="let deck of deckControls" [value]="deck.value">
-                    {{ deck.value.type }}
-                </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </section>
-      </form>
-    </mat-card-content>
-</mat-card>
-<button mat-raised-button color="primary" >Start game</button> -->
+
+<button mat-raised-button color="primary" >Start game</button>
