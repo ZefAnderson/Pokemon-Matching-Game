@@ -36,7 +36,7 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.SetUserData(result.user);
+        // this.SetUserData(result, email, firstName, lastName, playerName);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
             this.router.navigate([`profile/${user.uid}`]);
@@ -53,11 +53,12 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password, firstName, lastName, playerName )
       .then((result) => {
-        console.log(result)
+        console.log(result + 'this?')
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
         this.SendVerificationMail();
-        this.SetUserData(result.user);
+        this.SetUserData(result, email, firstName, lastName, playerName);
+        console.log(result.user)
       })
       .catch((error) => {
         window.alert(error.message);
@@ -90,20 +91,21 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any) {
+  SetUserData(user: any, email: string, firstName: string, lastName: string, playerName: string) {
     console.log(user)
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
-      `users/${user.uid}`
-    );
-    
+      `users/${user.user.uid}`
+      );
+
+    user.uid = user.user.uid ? user.user.uid: '';
     const userData: User = {
       uid: user.uid,
-      email: user.email,
-      firstName: user.firstName ? user.firstName : '',
-      lastName: user.lastName  ? user.lastName : '',
-      displayName: user.playerName ? user.playerName : '',
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      playerName: playerName,
+      photoURL: user.photoURL ? user.photoUrl : '',
+      emailVerified: user.emailVerified ? user.emailVerified : false,
     };
 
     return userRef.set(userData, {
