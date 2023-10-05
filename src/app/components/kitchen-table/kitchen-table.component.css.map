@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"kitchen-table.component.css"}
+{"version":3,"sources":["kitchen-table.component.scss","kitchen-table.component.css"],"names":[],"mappings":"AAAA;EACI,SAAA;ACCJ;;ADEA;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,8BAAA;EACA,oGAAA;EACA,iBAAA;ACCJ;;ADEA;EACI,aAAA;EACA,yBAAA;EACA,uDAAA;EACA,aAAA;EACA,aAAA;EACA,4BAAA;EACA,sBAAA;EACA,2TAAA;ACCJ;;ADEA;EACI,aAAA;EACA,8BAAA;EACA,kBAAA;ACCJ;;ADEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,qIAAA;ACCJ","file":"kitchen-table.component.css"}
