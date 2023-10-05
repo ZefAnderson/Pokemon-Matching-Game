@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/service/auth.service';
+
 
 
 @Component({
@@ -10,16 +12,14 @@ import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 export class SignUpComponent {
   
 
-  constructor(fb: FormBuilder) {
-    // this.form = fb.group({
-    //   firstName: [''],
-    //   lastName: [''],
-    //   email: [''],
-    //   password: ['']
-    // });
+  constructor(
+    fb: FormBuilder,
+    public authService: AuthService
+    ) {
   }
-  submitNewUser() {
-
-  };
-
+  signUp(email: string, password: string, firstName: string, lastName: string, playerName: string){
+    console.log(email)
+    this.authService.SignUp(email, password, firstName, lastName, playerName)
+    
+  }
 }

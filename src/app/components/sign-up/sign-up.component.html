@@ -7,34 +7,34 @@
         <div class="displayTableCell">
           <div class="redirectToLogin">
             <div class="sign-up">
-              <mat-form-field>
+              <div>
+                <mat-form-field>
                 <!-- <label>Name</label> -->
-                <input matInput placeholder="Ash" id="FirstName" label="firstName">
+                <input matInput placeholder="First Name" #firstName label="firstName">
               </mat-form-field>
               <mat-form-field>
                 <!-- <label>Name</label> -->
-                <input matInput placeholder="Ketchum" id="LastName" label="lastName">
+                <input matInput placeholder="Last Name" #lastName label="lastName">
               </mat-form-field>
               <mat-form-field>
                 <!-- <label>Name</label> -->
-                <input matInput placeholder="Player Name" id="playerName" label="playerName">
+                <input matInput placeholder="Player Name" #playerName label="playerName">
               </mat-form-field>
               <mat-form-field>
                 <!-- <label>Email</label> -->
-                <input matInput placeholder="you@email.com" id="Email" label="Email">
+                <input matInput placeholder="you@email.com" #userEmail label="Email">
               </mat-form-field>
               <mat-form-field>
                 <!-- <label>Password</label> -->
-                <input matInput placeholder="password" id="Password" label="Password">
+                <input matInput placeholder="password" #userPassword label="Password">
               </mat-form-field>
-              <mat-form-field>
-                <!-- <label>Confirm Password</label> -->
-                <input matInput placeholder="confirm password" id="Confirm" label="Confirm">
-              </mat-form-field>
-              <button (click)="submitNewUser()">
+              </div>
+              <button type="button" (click)="signUp(userEmail.value, userPassword.value, firstName.value, lastName.value, playerName.value)">
                 Submit
               </button>
+              
             </div>
+            
             <div class="returnToLogin">
               <span
                 ><span

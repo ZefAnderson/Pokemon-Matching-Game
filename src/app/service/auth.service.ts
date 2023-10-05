@@ -48,10 +48,12 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string) {
+  SignUp(email: string, password: string, firstName: string, lastName: string, playerName: string) {
+    console.log('hopefully works')
     return this.afAuth
-      .createUserWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password, firstName, lastName, playerName )
       .then((result) => {
+        console.log(result)
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
         this.SendVerificationMail();
@@ -93,13 +95,17 @@ export class AuthService {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
+    
     const userData: User = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
+      firstName: user.firstName ? user.firstName : '',
+      lastName: user.lastName  ? user.lastName : '',
+      displayName: user.playerName ? user.playerName : '',
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };
+
     return userRef.set(userData, {
       merge: true,
     });
