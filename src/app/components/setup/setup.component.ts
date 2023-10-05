@@ -9,8 +9,9 @@ import { FormGroup, FormBuilder, AbstractControl, FormArray } from '@angular/for
 export class SetupComponent implements OnInit {
 
   form: FormGroup;
+  fb: FormBuilder = new FormBuilder; 
 
-  constructor(private fb: FormBuilder) {  // Use private access modifier for fb
+  constructor(fb: FormBuilder) {  // Use private access modifier for fb
     this.form = fb.group({
       playerSelects: this.fb.array([
         {options: this.fb.array([''])}

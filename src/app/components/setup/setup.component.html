@@ -6,11 +6,11 @@
     <mat-card class="profile-card">
       <mat-card-content class="card-image-container">
 
-        <div formArrayName="selects">
+        <div>
           <div *ngFor="let select of playerSelects.controls; let i = index">
             <mat-form-field>
               <mat-label>Select an option</mat-label>
-              <mat-select formControlName="selectedOption">
+              <mat-select >
                 <mat-option *ngFor="let option of playerOptions.controls" [value]="option.value.value">
                   {{ option.value.value }}
                 </mat-option>
@@ -18,7 +18,7 @@
             </mat-form-field>
           </div>
         </div>
-        
+
       </mat-card-content>
       <button mat-raised-button color="primary" (click)="addPlayerSelect()">
         <mat-icon aria-hidden="false" aria-label="add circle icon" fontIcon="add_circle"></mat-icon> Add player
