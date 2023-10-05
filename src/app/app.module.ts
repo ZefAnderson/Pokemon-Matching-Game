@@ -26,6 +26,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 
@@ -38,7 +39,8 @@ import {MatSelectModule} from '@angular/material/select';
     ProfileComponent,
     KitchenTableComponent,
     SetupComponent,
-    SignUpComponent
+    SignUpComponent,
+    ForgotPasswordComponent
 
   ],
   imports: [

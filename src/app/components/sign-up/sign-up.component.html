@@ -1,26 +1,53 @@
+<div class="everything">
+  <!-- <img class="testing" src="assets/images/1200px-LGPE_Kanto_Map.png" alt="kanto region map via Bulbapedia"> -->
+  <div class="opaque">
+    <div class="centered">
+    </div>
+      <div class="displayTable">
+        <div class="displayTableCell">
+          <div class="redirectToLogin">
+            <div class="sign-up">
+              <mat-form-field>
+                <!-- <label>Name</label> -->
+                <input matInput placeholder="Ash" id="FirstName" label="firstName">
+              </mat-form-field>
+              <mat-form-field>
+                <!-- <label>Name</label> -->
+                <input matInput placeholder="Ketchum" id="LastName" label="lastName">
+              </mat-form-field>
+              <mat-form-field>
+                <!-- <label>Name</label> -->
+                <input matInput placeholder="Player Name" id="playerName" label="playerName">
+              </mat-form-field>
+              <mat-form-field>
+                <!-- <label>Email</label> -->
+                <input matInput placeholder="you@email.com" id="Email" label="Email">
+              </mat-form-field>
+              <mat-form-field>
+                <!-- <label>Password</label> -->
+                <input matInput placeholder="password" id="Password" label="Password">
+              </mat-form-field>
+              <mat-form-field>
+                <!-- <label>Confirm Password</label> -->
+                <input matInput placeholder="confirm password" id="Confirm" label="Confirm">
+              </mat-form-field>
+              <button (click)="submitNewUser()">
+                Submit
+              </button>
+            </div>
+            <div class="returnToLogin">
+              <span
+                >Don't have an account?<span
+                  class="redirect"
+                  routerLink="/register-user"
+                >
+                  Sign Up</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    
 
-<div class="sign-up">
-  <mat-form-field>
-    <!-- <label>Name</label> -->
-    <input matInput placeholder="Ash" id="FirstName" label="firstName">
-  </mat-form-field>
-  <mat-form-field>
-    <!-- <label>Name</label> -->
-    <input matInput placeholder="Ketchum" id="LastName" label="lastName">
-  </mat-form-field>
-  <mat-form-field>
-    <!-- <label>Email</label> -->
-    <input matInput placeholder="you@email.com" id="Email" label="Email">
-  </mat-form-field>
-  <mat-form-field>
-    <!-- <label>Password</label> -->
-    <input matInput placeholder="password" id="Password" label="Password">
-  </mat-form-field>
-  <mat-form-field>
-    <!-- <label>Confirm Password</label> -->
-    <input matInput placeholder="confirm password" id="Confirm" label="Confirm">
-  </mat-form-field>
-  <button class="signupButton glow-button" (click)="submitNewUser()">
-    Submit
-  </button>
-</div>
