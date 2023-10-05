@@ -4,9 +4,11 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { KitchenTableComponent } from './components/kitchen-table/kitchen-table.component';
 import { SetupComponent } from './components/setup/setup.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent, pathMatch: 'full'},
+  {path: 'signup', component: SignUpComponent, pathMatch: 'full'},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'setup/:id', component: SetupComponent},
   {path: 'kitchentable', component: KitchenTableComponent},
