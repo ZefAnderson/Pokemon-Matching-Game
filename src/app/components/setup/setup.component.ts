@@ -13,9 +13,7 @@ export class SetupComponent implements OnInit {
 
   constructor(fb: FormBuilder) {  // Use private access modifier for fb
     this.form = fb.group({
-      playerSelects: this.fb.array([
-        {options: this.fb.array([''])}
-      ]),
+      playerSelects: this.fb.array(['']),
       playerOptions: this.fb.array([
         {
           value: ['player One']
