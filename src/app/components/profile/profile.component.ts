@@ -18,4 +18,14 @@ export class ProfileComponent {
       }
     }
   }
+
+  goToAvatars() {
+    const userJson = localStorage.getItem('user');
+    if (userJson !== null) {
+      const user = JSON.parse(userJson);
+      if (user) {
+        this.router.navigate([`avatars/${user.uid}`])
+      }
+    }
+  }
 }
