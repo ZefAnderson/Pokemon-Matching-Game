@@ -10,6 +10,6 @@ export class ProfileComponent {
   constructor(private router: Router) {}
 
   goToSetUp() {
-    this.router.navigate(['/setup'])
+    this.router.navigate([`/setup/:id`])
   }
 }
