@@ -12,16 +12,19 @@ export class SetupComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {  // Use private access modifier for fb
     this.form = fb.group({
-      players: fb.array([
-        fb.group({
-          name: ['player One']
-        }),
-        fb.group({
-          name: ['player two']
-        }),
-        fb.group({
-          name: ['player three']
-        }),
+      playerSelects: this.fb.array([
+        {options: this.fb.array([''])}
+      ]),
+      playerOptions: this.fb.array([
+        {
+          value: ['player One']
+        },
+        {
+          value: ['player Two']
+        },
+        {
+          value: ['player Three']
+        },
       ]),
       decks: fb.array([
         fb.group({
@@ -93,6 +96,8 @@ export class SetupComponent implements OnInit {
     console.log('Angular sucks ass.')
   }
 
+  initForm(): void {}
+  
   get deckControls(): AbstractControl[] {
     return (this.form.get('decks') as FormArray).controls;
   }
@@ -101,10 +106,26 @@ export class SetupComponent implements OnInit {
     return (this.form.get('players') as FormArray).controls
   }
 
-
-  addAnotherPlayer () {
-    console.log('oooh!')
+  get players(): FormArray {
+    return this.form.get('players') as FormArray;
   }
+
+  get playerSelects(): FormArray {
+    return this.form.get('playerSelects') as FormArray
+  }
+
+  get playerOptions(): FormArray {
+    return this.form.get('playerOptions') as FormArray
+  }
+
+  addPlayerSelect(): void {
+    const newPlayerSelect = this.fb.group({
+      options: ['']
+    })
+
+    this.playerSelects.push(newPlayerSelect)
+  }
+
 
   startTheGame () {
     console.log('AHHHHHH!!!!!')
