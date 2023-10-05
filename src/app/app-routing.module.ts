@@ -5,10 +5,12 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { KitchenTableComponent } from './components/kitchen-table/kitchen-table.component';
 import { SetupComponent } from './components/setup/setup.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent, pathMatch: 'full'},
-  {path: 'signup', component: SignUpComponent, pathMatch: 'full'},
+  {path: 'register-user', component: SignUpComponent, pathMatch: 'full'},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'setup/:id', component: SetupComponent},
   {path: 'kitchentable', component: KitchenTableComponent},
