@@ -65,4 +65,8 @@
   justify-content: flex-end;
   width: 400px;
   transform: translate(37%, 175px);
+}
+
+.fillOutForm {
+  width: 400px;
 }/*# sourceMappingURL=sign-up.component.css.map */
