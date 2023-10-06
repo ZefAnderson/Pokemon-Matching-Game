@@ -17,11 +17,11 @@
                 <mat-list>
                     <mat-list-item>
                         <span matListItemTitle>First Name</span>
-                        <span matListItemLine>Jessie</span>
+                        <span matListItemLine>{{ user?.firstName }}</span>
                     </mat-list-item>
                     <mat-list-item>
                         <span matListItemTitle>Last Name</span>
-                        <span matListItemLine>Musashi</span>
+                        <span matListItemLine>{{ user?.lastName }}</span>
                     </mat-list-item>
                 </mat-list>
             </mat-card-content>
@@ -29,11 +29,11 @@
                 <mat-list>
                     <mat-list-item>
                         <span matListItemTitle>PlayerID</span>
-                        <span matListItemLine>WSEFOnmlknlij23423</span>
+                        <span matListItemLine>{{ user?.uid }}</span>
                     </mat-list-item>
                     <mat-list-item>
                         <span matListItemTitle>Player Name</span>
-                        <span matListItemLine>BlastingOffAgain</span>
+                        <span matListItemLine>{{ user?.playerName }}</span>
                     </mat-list-item>
                 </mat-list>
             </mat-card-content>
