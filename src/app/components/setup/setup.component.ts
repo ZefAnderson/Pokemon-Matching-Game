@@ -140,6 +140,14 @@ export class SetupComponent implements OnInit {
 
   startTheGame () {
     console.log('AHHHHHH!!!!!')
+    const selectedPlayerValues = this.playerSelects.controls.map(
+      (control: AbstractControl) => control.value
+    );
+    const selectedDeckValue = this.form.get('selectedDeck')?.value;
+
+    console.log('Selected Player Values:', selectedPlayerValues);
+    console.log('Selected Deck Value:', selectedDeckValue);
+
   }
 
 }

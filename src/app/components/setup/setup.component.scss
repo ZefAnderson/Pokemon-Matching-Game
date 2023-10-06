@@ -52,10 +52,15 @@
     div {
         // border: solid blue 1px;
         margin: 1em;
+        display: flex;
 
         .motherHover:hover {
             cursor: pointer;
         }
     }
+}
+
+.addPlayerButton {
+    margin-bottom: 1em;
 }
 
