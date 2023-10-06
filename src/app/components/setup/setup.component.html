@@ -16,11 +16,12 @@
                 </mat-option>
               </mat-select>
             </mat-form-field>
+            <mat-icon *ngIf="playerSelects.length > 1" (click)="removePlayerSelect(i)" fontIcon="close" class="motherHover"></mat-icon>
           </div>
         </div>
 
       </mat-card-content>
-      <button mat-raised-button color="primary" (click)="addPlayerSelect()">
+      <button mat-raised-button color="primary" (click)="addPlayerSelect()" [disabled]="!isButtonEnabled">
         <mat-icon aria-hidden="false" aria-label="add circle icon" fontIcon="add_circle"></mat-icon> Add player
       </button>
     </mat-card>

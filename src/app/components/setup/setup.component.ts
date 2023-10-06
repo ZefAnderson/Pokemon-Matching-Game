@@ -10,6 +10,8 @@ export class SetupComponent implements OnInit {
 
   form: FormGroup;
   fb: FormBuilder = new FormBuilder; 
+  playerCount: number = 0
+  isButtonEnabled: boolean = true
 
   constructor(fb: FormBuilder) {  // Use private access modifier for fb
     this.form = fb.group({
@@ -118,11 +120,21 @@ export class SetupComponent implements OnInit {
   }
 
   addPlayerSelect(): void {
-    const newPlayerSelect = this.fb.group({
-      options: ['']
-    })
+    const newPlayerSelect = this.fb.group([''])
 
-    this.playerSelects.push(newPlayerSelect)
+    if (this.playerSelects.length < 3) {
+      this.playerCount ++
+      this.playerSelects.push(newPlayerSelect)
+    }
+
+    this.playerSelects.length === 3 ? this.isButtonEnabled = false : this.isButtonEnabled = true
+    
+  }
+  
+  removePlayerSelect(i: number): void {
+    console.log('you clicked the butt:', i)
+    this.playerSelects.removeAt(i)
+    this.playerSelects.length === 3 ? this.isButtonEnabled = false : this.isButtonEnabled = true
   }
 
 

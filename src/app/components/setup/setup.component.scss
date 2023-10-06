@@ -47,10 +47,15 @@
     flex-direction: row;
     align-items: start;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 
     div {
         // border: solid blue 1px;
         margin: 1em;
+
+        .motherHover:hover {
+            cursor: pointer;
+        }
     }
 }
 
