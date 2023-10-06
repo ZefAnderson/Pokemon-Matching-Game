@@ -1,3 +1,12 @@
+.profile-background {
+    min-height: 100%;
+    width: 100%;
+    // background-image: url(../../../assets/images/1200px-LGPE_Kanto_Map.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .profile-header {
     display: flex;
     justify-content: center;
@@ -43,7 +52,6 @@
     height: 4vw;
     width: 4.25vw
 }
-
 
 .card-image {
     border-radius: 50%;

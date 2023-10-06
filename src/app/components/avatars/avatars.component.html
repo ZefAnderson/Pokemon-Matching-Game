@@ -1,0 +1,21 @@
+<mat-toolbar class="profile-header">
+    <p class="header-text">Choose An Avatar</p>
+</mat-toolbar>
+<div class="profile-card-centering">
+    <form [formGroup]="form">
+      <mat-card class="profile-card">
+        <mat-card-content>
+          <mat-radio-group class="avatars" formControlName="selectedAvatar">
+            <div class="radiogroup" *ngFor="let avatar of avatars; let i = index">
+              <mat-radio-button [value]="i">{{i + 1}}</mat-radio-button>
+              <img [src]=avatar.img[0] alt="" class="avatar-image">
+            </div>
+          </mat-radio-group>
+        </mat-card-content>
+        <button (click)="confirmChange()">
+            confirm
+        </button>
+      </mat-card>
+    </form>
+  </div>
+  
