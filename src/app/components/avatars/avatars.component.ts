@@ -33,6 +33,27 @@ export class AvatarsComponent implements OnInit {
           value: [5],
           img: ['../../../assets/images/avatars/mom.png']
         }),
+        fb.group({
+          value: [6],
+          img: ['../../../assets/images/avatars/oak.png']
+        }),
+        fb.group({
+          value: [7],
+          img: ['../../../assets/images/avatars/james.png']
+        }),
+        fb.group({
+          value: [8],
+          img: ['../../../assets/images/avatars/cynthia.png']
+        }),
+        fb.group({
+          value: [9],
+          img: ['../../../assets/images/avatars/giovanni.png']
+        }),
+        fb.group({
+          value: [10],
+          img: ['../../../assets/images/avatars/elm.png']
+        }),
+
       ])
     })
   }
