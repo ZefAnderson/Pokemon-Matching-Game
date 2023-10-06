@@ -9,19 +9,23 @@ import { FormGroup, FormBuilder, AbstractControl, FormArray } from '@angular/for
 export class SetupComponent implements OnInit {
 
   form: FormGroup;
+  fb: FormBuilder = new FormBuilder; 
+  playerCount: number = 0
+  isButtonEnabled: boolean = true
 
-  constructor(private fb: FormBuilder) {  // Use private access modifier for fb
+  constructor(fb: FormBuilder) {  // Use private access modifier for fb
     this.form = fb.group({
-      players: fb.array([
-        fb.group({
-          name: ['player One']
-        }),
-        fb.group({
-          name: ['player two']
-        }),
-        fb.group({
-          name: ['player three']
-        }),
+      playerSelects: this.fb.array(['']),
+      playerOptions: this.fb.array([
+        {
+          value: ['player One']
+        },
+        {
+          value: ['player Two']
+        },
+        {
+          value: ['player Three']
+        },
       ]),
       decks: fb.array([
         fb.group({
@@ -93,6 +97,8 @@ export class SetupComponent implements OnInit {
     console.log('Angular sucks ass.')
   }
 
+  initForm(): void {}
+  
   get deckControls(): AbstractControl[] {
     return (this.form.get('decks') as FormArray).controls;
   }
@@ -101,13 +107,47 @@ export class SetupComponent implements OnInit {
     return (this.form.get('players') as FormArray).controls
   }
 
-
-  addAnotherPlayer () {
-    console.log('oooh!')
+  get players(): FormArray {
+    return this.form.get('players') as FormArray;
   }
+
+  get playerSelects(): FormArray {
+    return this.form.get('playerSelects') as FormArray
+  }
+
+  get playerOptions(): FormArray {
+    return this.form.get('playerOptions') as FormArray
+  }
+
+  addPlayerSelect(): void {
+    const newPlayerSelect = this.fb.group([''])
+
+    if (this.playerSelects.length < 3) {
+      this.playerCount ++
+      this.playerSelects.push(newPlayerSelect)
+    }
+
+    this.playerSelects.length === 3 ? this.isButtonEnabled = false : this.isButtonEnabled = true
+    
+  }
+  
+  removePlayerSelect(i: number): void {
+    console.log('you clicked the butt:', i)
+    this.playerSelects.removeAt(i)
+    this.playerSelects.length === 3 ? this.isButtonEnabled = false : this.isButtonEnabled = true
+  }
+
 
   startTheGame () {
     console.log('AHHHHHH!!!!!')
+    const selectedPlayerValues = this.playerSelects.controls.map(
+      (control: AbstractControl) => control.value
+    );
+    const selectedDeckValue = this.form.get('selectedDeck')?.value;
+
+    console.log('Selected Player Values:', selectedPlayerValues);
+    console.log('Selected Deck Value:', selectedDeckValue);
+
   }
 
 }

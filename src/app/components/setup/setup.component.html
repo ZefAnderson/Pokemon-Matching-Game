@@ -5,15 +5,23 @@
   <form [formGroup]="form">
     <mat-card class="profile-card">
       <mat-card-content class="card-image-container">
-        <mat-card-title>Select other players</mat-card-title>
-        <mat-form-field>
-          <mat-label>Choose a player</mat-label>
-          <mat-select>
-            <mat-option  *ngFor="let player of playerControls" value={{player.value.name}} >{{player.value.name}}</mat-option>
-          </mat-select>
-        </mat-form-field>
+
+        <div class="playerSelects">
+          <div *ngFor="let select of playerSelects.controls; let i = index">
+            <mat-form-field>
+              <mat-label>Select an option</mat-label>
+              <mat-select >
+                <mat-option *ngFor="let option of playerOptions.controls" [value]="option.value.value">
+                  {{ option.value.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-icon *ngIf="playerSelects.length > 1" (click)="removePlayerSelect(i)" fontIcon="close" class="motherHover"></mat-icon>
+          </div>
+        </div>
+
       </mat-card-content>
-      <button mat-raised-button color="primary" (click)="addAnotherPlayer()">
+      <button mat-raised-button color="primary" (click)="addPlayerSelect()" [disabled]="!isButtonEnabled" class="addPlayerButton">
         <mat-icon aria-hidden="false" aria-label="add circle icon" fontIcon="add_circle"></mat-icon> Add player
       </button>
     </mat-card>
