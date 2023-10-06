@@ -48,16 +48,16 @@ export class AuthService {
       });
   }
   // Sign up with email/password
-  SignUp(email: string, password: string, firstName: string, lastName: string, playerName: string) {
+  SignUp(email: string, password: string, firstName: string, lastName: string, photoURL: string, playerName: string) {
     console.log('hopefully works')
     return this.afAuth
-      .createUserWithEmailAndPassword(email, password, firstName, lastName, playerName )
+      .createUserWithEmailAndPassword(email, password, firstName, lastName, photoURL, playerName )
       .then((result) => {
         console.log(result + 'this?')
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
         this.SendVerificationMail();
-        this.SetUserData(result, email, firstName, lastName, playerName);
+        this.SetUserData(result, email, firstName, lastName, photoURL, playerName);
         console.log(result.user)
       })
       .catch((error) => {
@@ -91,7 +91,7 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user: any, email: string, firstName: string, lastName: string, playerName: string) {
+  SetUserData(user: any, email: string, firstName: string, lastName: string, photoURL: string, playerName: string) {
     console.log(user)
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.user.uid}`
@@ -104,7 +104,7 @@ export class AuthService {
       firstName: firstName,
       lastName: lastName,
       playerName: playerName,
-      photoURL: user.photoURL ? user.photoUrl : '',
+      photoURL: '../../../assets/images/avatars/ash.png',
       emailVerified: user.emailVerified ? user.emailVerified : false,
     };
 
