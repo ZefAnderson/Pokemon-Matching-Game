@@ -7,6 +7,7 @@ import {
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { from, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -111,6 +112,15 @@ export class AuthService {
     return userRef.set(userData, {
       merge: true,
     });
+  }
+  //update avatar image
+  UpdateAvatar(uid: string, selectedAvatarValue: string): Observable<void> {
+    const userRef = this.afs.doc(`users/${uid}`);
+    const updateData = {
+      photoURL: selectedAvatarValue
+    }
+
+    return from(userRef.update(updateData));
   }
   // Sign out
   SignOut() {
