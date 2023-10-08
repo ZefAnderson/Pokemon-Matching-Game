@@ -8,10 +8,14 @@ import { FirestoreDataService } from 'src/app/service/firestore-data.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  isLoading: boolean = false;
   user: any;
   uid: any;
 
-  constructor(private router: Router, private firestoreDataService: FirestoreDataService) {}
+  constructor(
+    private router: Router, 
+    private firestoreDataService: FirestoreDataService,
+    ) {}
 
   ngOnInit(): void {
     const userJson = localStorage.getItem('user');
@@ -19,11 +23,17 @@ export class ProfileComponent implements OnInit {
       const user = JSON.parse(userJson)
       this.uid = user.uid
     }
-    console.log(this.uid)
 
     if (this.uid !== null) {
-      this.firestoreDataService.getUser(this.uid).subscribe((data) => {
+      this.isLoading = true;
+      this.firestoreDataService.getUser(this.uid).subscribe(
+        (data) => {
         this.user = data;
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error('Error fetching user data:', error);
+        this.isLoading = false;
       })
     }
   }
