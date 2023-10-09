@@ -28,6 +28,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AvatarsComponent } from './components/avatars/avatars.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 
@@ -42,7 +43,8 @@ import { AvatarsComponent } from './components/avatars/avatars.component';
     SetupComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    AvatarsComponent
+    AvatarsComponent,
+    LoadingComponent
 
   ],
   imports: [

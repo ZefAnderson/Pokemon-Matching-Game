@@ -1,44 +1,49 @@
 <mat-toolbar class="profile-header">
     <p class="header-text">My Profile</p>
 </mat-toolbar>
+<mat-toolbar></mat-toolbar>
 
 <div class="profile-background">
-
-    <div class="profile-card-centering">
-        <mat-card class="profile-card">
-            <mat-card-content class="card-image-container">
-                <button mat-mini-fab color="accent" class="edit-button" (click)="goToAvatars()">
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <img class="card-image" [src]="user?.photoURL" alt="placeholder profile image">
-            </mat-card-content>
-            <mat-divider [vertical]="true"></mat-divider>
-            <mat-card-content class="profile-info">
-                <mat-list>
-                    <mat-list-item>
-                        <span matListItemTitle>First Name</span>
-                        <span matListItemLine>{{ user?.firstName }}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>Last Name</span>
-                        <span matListItemLine>{{ user?.lastName }}</span>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card-content>
-            <mat-card-content class="profile-info">
-                <mat-list>
-                    <mat-list-item>
-                        <span matListItemTitle>PlayerID</span>
-                        <span matListItemLine>{{ user?.uid }}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>Player Name</span>
-                        <span matListItemLine>{{ user?.playerName }}</span>
-                    </mat-list-item>
-                </mat-list>
-            </mat-card-content>
-        </mat-card>
-    </div>
+    <ng-container *ngIf="isLoading; else content">
+        <app-loading></app-loading>
+    </ng-container>
+    <ng-template #content>
+        <div class="profile-card-centering">
+            <mat-card class="profile-card">
+                <mat-card-content class="card-image-container">
+                    <button mat-mini-fab color="accent" class="edit-button" (click)="goToAvatars()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <img class="card-image" [src]="user?.photoURL" alt="placeholder profile image">
+                </mat-card-content>
+                <mat-divider [vertical]="true"></mat-divider>
+                <mat-card-content class="profile-info">
+                    <mat-list>
+                        <mat-list-item>
+                            <span matListItemTitle>First Name</span>
+                            <span matListItemLine>{{ user?.firstName }}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <span matListItemTitle>Last Name</span>
+                            <span matListItemLine>{{ user?.lastName }}</span>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+                <mat-card-content class="profile-info">
+                    <mat-list>
+                        <mat-list-item>
+                            <span matListItemTitle>PlayerID</span>
+                            <span matListItemLine>{{ user?.uid }}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <span matListItemTitle>Player Name</span>
+                            <span matListItemLine>{{ user?.playerName }}</span>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </ng-template>
     
     <div class="set-up-game-button">
         <button mat-raised-button color="accent" (click)="goToSetUp()">
