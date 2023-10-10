@@ -17,9 +17,9 @@ export class SignUpComponent {
     public authService: AuthService
     ) {
   }
-  signUp(email: string, password: string, firstName: string, lastName: string, playerName: string){
+  signUp(email: string, password: string, firstName: string, lastName: string, photoURL: string = '../../../assets/images/avatars/ash.png', playerName: string){
     console.log(email)
-    this.authService.SignUp(email, password, firstName, lastName, playerName)
+    this.authService.SignUp(email, password, firstName, lastName, photoURL, playerName)
     
   }
 }
