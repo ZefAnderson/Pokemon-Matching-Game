@@ -15,43 +15,43 @@ export class AvatarsComponent implements OnInit {
   avatars = [
     {
       value: [1],
-      img: ['../../../assets/images/avatars/ash.png']
+      img: ['../../../assets/images/avatars/default.png']
     },
     {
       value: [2],
-      img: ['../../../assets/images/avatars/misty.png']
+      img: ['../../../assets/images/avatars/dad.png']
     },
     {
       value: [3],
-      img: ['../../../assets/images/avatars/jessie.png']
+      img: ['../../../assets/images/avatars/n.png']
     },
     {
       value: [4],
-      img: ['../../../assets/images/avatars/brock.png']
+      img: ['../../../assets/images/avatars/trainer.png']
     },
     {
       value: [5],
-      img: ['../../../assets/images/avatars/mom.png']
+      img: ['../../../assets/images/avatars/blanche.png']
     },
     {
       value: [6],
-      img: ['../../../assets/images/avatars/oak.png']
+      img: ['../../../assets/images/avatars/spark.png']
     },
     {
       value: [7],
-      img: ['../../../assets/images/avatars/james.png']
+      img: ['../../../assets/images/avatars/candela.png']
     },
     {
       value: [8],
-      img: ['../../../assets/images/avatars/cynthia.png']
+      img: ['../../../assets/images/avatars/mystic.png']
     },
     {
       value: [9],
-      img: ['../../../assets/images/avatars/giovanni.png']
+      img: ['../../../assets/images/avatars/instinct.png']
     },
     {
       value: [10],
-      img: ['../../../assets/images/avatars/elm.png']
+      img: ['../../../assets/images/avatars/valor.png']
     }
   ];
 
