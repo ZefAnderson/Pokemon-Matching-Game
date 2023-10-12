@@ -54,6 +54,15 @@
     width: 4.25vw
 }
 
+.name-edit-button {
+    position: absolute;
+    top: 16vw;
+    right: 1vw;
+    z-index: 42;
+    height: 4vw;
+    width: 4.25vw;
+}
+
 .card-image {
     border-radius: 50%;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;    height: 75%;
@@ -70,7 +79,7 @@
 .profile-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     width: 30%;
 }
 
