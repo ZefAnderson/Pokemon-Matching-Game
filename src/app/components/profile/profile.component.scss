@@ -83,6 +83,10 @@
     width: 30%;
 }
 
+.nvm-button {
+    margin-left: 1%;
+}
+
 .mdc-list {
     display: flex;
     flex-direction: column;
@@ -97,6 +101,7 @@
 
 .profile-info .mdc-list-item__secondary-text {
     font-size: 22px;
+    padding-bottom: 1%;
 }
 
 .set-up-game-button {

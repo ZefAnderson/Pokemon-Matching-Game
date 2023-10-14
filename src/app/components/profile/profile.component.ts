@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { FirestoreDataService } from 'src/app/service/firestore-data.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private router: Router, 
     private firestoreDataService: FirestoreDataService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     ) {
       this.playerNameForm = this.formBuilder.group({
@@ -71,9 +73,19 @@ export class ProfileComponent implements OnInit {
   }
 
   updatePlayerName() {
-    if (this.playerNameForm.valid) {
-      const newName = this.playerNameForm.value.playerName;
-      this.isEditing = false;
+    const userJson = localStorage.getItem('user');
+    if (userJson !== null) {
+      const user = JSON.parse(userJson);
+      if (user && this.playerNameForm.valid) {
+        const newName = this.playerNameForm.value.playerName;
+        this.authService.UpdatePlayerName(user.uid, newName).subscribe(() => {
+          this.isEditing = false;
+        })
+      }
     }
+  }
+
+  nvmButton() {
+    this.isEditing = false;
   }
 }
