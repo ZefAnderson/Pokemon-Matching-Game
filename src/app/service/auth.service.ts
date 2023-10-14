@@ -105,7 +105,7 @@ export class AuthService {
       firstName: firstName,
       lastName: lastName,
       playerName: playerName,
-      photoURL: '../../../assets/images/avatars/ash.png',
+      photoURL: '../../../assets/images/avatars/default.png',
       emailVerified: user.emailVerified ? user.emailVerified : false,
     };
 
