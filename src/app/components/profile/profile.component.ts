@@ -88,4 +88,8 @@ export class ProfileComponent implements OnInit {
   nvmButton() {
     this.isEditing = false;
   }
+
+  logOut() {
+    this.authService.SignOut();
+  }
 }
