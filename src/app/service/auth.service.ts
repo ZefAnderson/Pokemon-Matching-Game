@@ -122,6 +122,15 @@ export class AuthService {
 
     return from(userRef.update(updateData));
   }
+  //update player name 
+  UpdatePlayerName(uid: string, newName: string): Observable<void> {
+    const userRef = this.afs.doc(`users/${uid}`);
+    const updateData = {
+      playerName: newName
+    }
+
+    return from(userRef.update(updateData))
+  }
   // Sign out
   SignOut() {
     return this.afAuth.signOut().then(() => {
