@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirestoreDataService } from 'src/app/service/firestore-data.service';
 
@@ -8,14 +9,21 @@ import { FirestoreDataService } from 'src/app/service/firestore-data.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  playerNameForm: FormGroup
   isLoading: boolean = false;
+  isEditing: boolean = false;
   user: any;
   uid: any;
 
   constructor(
     private router: Router, 
     private firestoreDataService: FirestoreDataService,
-    ) {}
+    private formBuilder: FormBuilder,
+    ) {
+      this.playerNameForm = this.formBuilder.group({
+        playerName: ['', [Validators.required, Validators.minLength(1)]],
+      })
+    }
 
   ngOnInit(): void {
     const userJson = localStorage.getItem('user');
@@ -55,6 +63,17 @@ export class ProfileComponent implements OnInit {
       if (user) {
         this.router.navigate([`avatars/${user.uid}`])
       }
+    }
+  }
+
+  editPlayerName() {
+    this.isEditing = true;
+  }
+
+  updatePlayerName() {
+    if (this.playerNameForm.valid) {
+      const newName = this.playerNameForm.value.playerName;
+      this.isEditing = false;
     }
   }
 }
