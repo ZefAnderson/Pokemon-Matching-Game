@@ -105,7 +105,7 @@ export class AuthService {
       firstName: firstName,
       lastName: lastName,
       playerName: playerName,
-      photoURL: '../../../assets/images/avatars/ash.png',
+      photoURL: '../../../assets/images/avatars/default.png',
       emailVerified: user.emailVerified ? user.emailVerified : false,
     };
 
@@ -121,6 +121,15 @@ export class AuthService {
     }
 
     return from(userRef.update(updateData));
+  }
+  //update player name 
+  UpdatePlayerName(uid: string, newName: string): Observable<void> {
+    const userRef = this.afs.doc(`users/${uid}`);
+    const updateData = {
+      playerName: newName
+    }
+
+    return from(userRef.update(updateData))
   }
   // Sign out
   SignOut() {

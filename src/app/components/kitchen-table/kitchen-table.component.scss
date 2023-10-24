@@ -9,11 +9,12 @@ body {
     background: rgb(228,238,238);
     background: linear-gradient(234deg, rgba(228,238,238,0) 0%, rgba(255,88,84,0.9710477941176471) 100%);
     min-height: 100vh;
+    min-width: 1170px;
 }
 
 .gameboard {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     background-image: url(../../../assets/images/board.png);
     width: 1100px;
     height: 790px;
@@ -24,8 +25,9 @@ body {
 
 .players {
     display: flex;
-    flex-direction: column-reverse;
-    margin-right: 10px;;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0px 10px;
 }
 
 .player-card {
@@ -33,5 +35,20 @@ body {
     flex-direction: row;
     background-color: white;
     width: 170px;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.matching-area {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 80px 185px 60px;
+}
+
+.matching-cards {
+    height: 151px;
+    width: auto;
+    margin: 16px 20px 6px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }

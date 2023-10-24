@@ -29,7 +29,7 @@
                         </mat-list-item>
                     </mat-list>
                 </mat-card-content>
-                <button mat-mini-fab color="accent" class="name-edit-button" (click)="goToAvatars()">
+                <button mat-mini-fab color="accent" class="name-edit-button" (click)="editPlayerName()">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <mat-card-content class="profile-info">
@@ -38,10 +38,32 @@
                             <span matListItemTitle>PlayerID</span>
                             <span matListItemLine>{{ user?.uid }}</span>
                         </mat-list-item>
-                        <mat-list-item>
-                            <span matListItemTitle>Player Name</span>
-                            <span matListItemLine>{{ user?.playerName }}</span>
-                        </mat-list-item>
+                        <ng-container *ngIf="isEditing; else contents">
+                            <form (ngSubmit)="updatePlayerName()" [formGroup]="playerNameForm">
+                                <section>
+                                    <mat-form-field>
+                                        <input 
+                                            matInput 
+                                            type="text" 
+                                            placeholder="New Player Name" 
+                                            formControlName="playerName"
+                                        >
+                                    </mat-form-field>
+                                </section>
+                                    <button mat-raised-button color="primary" type="submit" [disabled]="playerNameForm.invalid">
+                                        Save
+                                    </button>
+                                    <button mat-raised-button color="accent" class="nvm-button" (click)="nvmButton()">
+                                        nvm
+                                    </button>
+                            </form>
+                        </ng-container>
+                        <ng-template #contents>
+                            <mat-list-item>
+                                <span matListItemTitle>Player Name</span>
+                                <span matListItemLine>{{ user?.playerName }}</span>
+                            </mat-list-item>
+                        </ng-template>
                     </mat-list>
                 </mat-card-content>
             </mat-card>
@@ -49,7 +71,7 @@
     </ng-template>
     
     <div class="set-up-game-button">
-        <button mat-raised-button color="accent" (click)="goToSetUp()">
+        <button mat-raised-button color="primary" (click)="goToSetUp()">
             Start A New Game
         </button>
     </div>
@@ -101,7 +123,7 @@
         <mat-list class="player-list-container">
             <h3 matListItemTitle>Players Who Have Beaten You</h3>
             <mat-list-item class="player-list">
-                <img matListItemAvatar src="assets/images/avatars/ash.png">
+                <img matListItemAvatar src="assets/images/avatars/default.png">
                 <span matListItemTitle> Ash </span>
             </mat-list-item>
             <mat-list-item class="player-list">
@@ -109,5 +131,11 @@
                 <span matListItemTitle> Ash's Mom </span>
             </mat-list-item>
         </mat-list>
+    </div>
+
+    <div class="set-up-game-button">
+        <button mat-raised-button color="accent" (click)="logOut()">
+            Log Out
+        </button>
     </div>
 </div>
